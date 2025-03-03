@@ -42,6 +42,10 @@ function App() {
               }}
             />
           </div>
+          <p className="text-pink-400 font-medium my-4 px-4 text-center">
+            Hãy gửi những lời chúc ❤️, lời yêu thương ❤️❤️ đến các cô và các bạn
+            nữ học viên của học viện
+          </p>
           <div className="my-3  wrapper-content--bottom">
             <div className="flex items-center gap-5 justify-center wrapper-content--btn">
               <div className=" flex justify-center items-center">
