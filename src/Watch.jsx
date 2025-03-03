@@ -47,7 +47,6 @@ const Watch = () => {
 
   const offset = currentPage * itemsPerPage;
   const currentItems = DataRes?.slice(offset, offset + itemsPerPage);
-  console.log("🚀 ~ Watch ~ currentItems:", currentItems);
   const pageCount = Math.ceil(DataRes?.length / itemsPerPage); // Tổng số trang
 
   const handlePageClick = ({ selected }) => {
