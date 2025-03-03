@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const http = axios.create({
-  baseURL: `https://sheets.googleapis.com/v4/spreadsheets/`,
+  baseURL: `${import.meta.env.VITE_API_GOOGLE}`,
   // timeout: 1000,
   headers: {
     "Content-Type": "application/json",
