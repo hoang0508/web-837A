@@ -1,39 +1,29 @@
-import { useState } from "react";
-
 import anh83 from "./assets/anh832.png";
 import Typewriter from "typewriter-effect";
-
-import { Radio } from "antd";
-import "./index.css";
+import "./index.scss";
+import { useNavigate } from "react-router-dom";
 
 function App() {
-  const [value, setValue] = useState(1);
-
-  const onChange = (e) => {
-    setValue(e.target.value);
-  };
-
+  const navigate = useNavigate();
   const handleClickBtn = (e) => {
     e.preventDefault();
-    if (value === 1) {
-      window.open(
-        "https://docs.google.com/forms/d/1_4MQ9KIdOvq9DREOUHcrnx-vn8jNWc-gusbIuHbPw0c/edit"
-      );
-    } else {
-      window.open(
-        "https://docs.google.com/forms/d/1noiTMzTE4If8fuGn_ZVMFFafHD4x2IvoLzVfrlU6YAI/edit"
-      );
-    }
+    window.open(
+      "https://docs.google.com/forms/d/1T-1u7o7jFZ_WVF_ZJ3NbZ3-60GEO2_tVjLDYah774pk/edit?hl=vi#responses"
+    );
+  };
+
+  const handleClickBtnWatch = () => {
+    navigate("/watch");
   };
 
   return (
     <>
-      <div className="text-2xl font-bold  bg-pink-200 min-h-screen p-10">
-        <div className="bg-white shadow-3xl p-3 w-[800px]  my-0 mx-auto rounded-2xl">
-          <h1 className="text-center text-red-400 p-4 uppercase">
+      <div className="text-2xl font-bold  bg-pink-200 min-h-screen p-10 wrapper">
+        <div className="bg-white shadow-3xl p-3 max-w-[800px]  my-0 mx-auto rounded-2xl wrapper-content">
+          <h1 className="text-center text-red-400 p-4 uppercase wrapper-content--title">
             Chi đoàn 7A - CHÚC MỪNG NGÀY QUỐC TẾ PHỤ NỮ 8-3
           </h1>
-          <div className="mx-auto w-[500px] h-[300px]">
+          <div className="mx-auto max-w-[500px] h-[300px] wrapper-content--image">
             <img
               src={anh83}
               alt="##"
@@ -44,7 +34,7 @@ function App() {
             <Typewriter
               options={{
                 strings: [
-                  `${"Chúc các cô giáo và chị em học viên, ngày 8-3 vui vẻ, hạnh phúc, luôn mạnh khỏe và thành công! 🌸💐❤️❤️❤️💰"}`,
+                  `${"Chúc các cô giáo và các bạn nữ học viên, nhân ngày 8-3 vui vẻ, hạnh phúc, luôn mạnh khỏe và thành công! 🌸💐❤️❤️❤️💰"}`,
                 ],
                 delay: 75,
                 autoStart: true,
@@ -52,34 +42,24 @@ function App() {
               }}
             />
           </div>
-          <div className="my-3">
-            <h3 className="text-center font-bold text-red-500 mb-2 text-3xl">
-              Cuộc thi duyên dáng HV nhân ngày 8-3
-            </h3>
-            <div className="flex justify-center items-center">
-              <p className="text-center italic text-base max-w-xl font-light">
-                Mời thầy cô và các bạn chọn vào ô dành cho học viên tham gia
-                bình chọn hoặc thầy cô tham gia bình chọn cho các thí sinh
-              </p>
-            </div>
-            <div className="flex items-center justify-center my-4">
-              <Radio.Group
-                className="custom-radio"
-                onChange={onChange}
-                value={value}
-                options={[
-                  { value: 1, label: "Học viên" },
-                  { value: 2, label: "Thầy cô" },
-                ]}
-              />
-            </div>
-            <div className="py-3 flex justify-center items-center">
-              <button
-                onClick={(e) => handleClickBtn(e)}
-                className="flex justify-center items-center py-3 px-4 bg-red-500 rounded-lg shadow-lg text-white"
-              >
-                Tham gia bình chọn tại đây
-              </button>
+          <div className="my-3  wrapper-content--bottom">
+            <div className="flex items-center gap-5 justify-center wrapper-content--btn">
+              <div className=" flex justify-center items-center">
+                <button
+                  onClick={(e) => handleClickBtn(e)}
+                  className="wrapper-content--button flex justify-center items-center py-3 px-4 bg-red-400 rounded-lg shadow-lg text-base text-white"
+                >
+                  Gửi lời chúc
+                </button>
+              </div>
+              <div className="flex justify-center items-center">
+                <button
+                  onClick={(e) => handleClickBtnWatch(e)}
+                  className="wrapper-content--button flex justify-center items-center text-base py-3 px-4 bg-red-500 rounded-lg shadow-lg text-white"
+                >
+                  Xem lời chúc mừng
+                </button>
+              </div>
             </div>
           </div>
         </div>
