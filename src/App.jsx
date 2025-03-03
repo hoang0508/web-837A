@@ -1,7 +1,10 @@
 import anh83 from "./assets/anh832.png";
+import nhacMP3 from "./assets/nhac.mp3";
 import Typewriter from "typewriter-effect";
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Volume2, VolumeOff } from "lucide-react";
 
 function App() {
   const navigate = useNavigate();
@@ -14,6 +17,27 @@ function App() {
 
   const handleClickBtnWatch = () => {
     navigate("/watch");
+  };
+
+  const audioRef = useRef(new Audio(nhacMP3));
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  // Dừng nhạc khi chuyển trang
+  useEffect(() => {
+    return () => {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0; // Reset về đầu
+    };
+  }, []);
+  const togglePlay = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current
+        .play()
+        .catch((err) => console.log("Lỗi phát nhạc:", err));
+    }
+    setIsPlaying(!isPlaying);
   };
 
   return (
@@ -34,7 +58,7 @@ function App() {
             <Typewriter
               options={{
                 strings: [
-                  `${"Chúc các cô giáo và các bạn nữ học viên, nhân ngày 8-3 vui vẻ, hạnh phúc, luôn mạnh khỏe và thành công! 🌸💐❤️❤️❤️💰"}`,
+                  `${"Chúc các cô giáo và các bạn nữ học viên, nhân ngày 8-3 vui vẻ, hạnh phúc, luôn mạnh khỏe và thành công! ❤️❤️❤️🌸🌸🌸🌸"}`,
                 ],
                 delay: 75,
                 autoStart: true,
@@ -67,6 +91,13 @@ function App() {
             </div>
           </div>
         </div>
+        <button className="fixed bottom-5 left-[30px]" onClick={togglePlay}>
+          {isPlaying ? (
+            <Volume2 size={40} strokeWidth={1.75} />
+          ) : (
+            <VolumeOff size={40} strokeWidth={1.75} />
+          )}
+        </button>
       </div>
     </>
   );
