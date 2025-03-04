@@ -10,10 +10,9 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 import "./index.scss";
 import "./loading.scss";
 import ReactPaginate from "react-paginate";
-import IconLeft from "./Icons/IconLeft";
 import IconRight from "./Icons/IconRight";
 
-const Watch = () => {
+const WatchPage = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -46,38 +45,38 @@ const Watch = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const offset = currentPage * itemsPerPage;
-  const currentItems = DataRes?.slice(offset, offset + itemsPerPage);
+  const currentItems =
+    DataRes?.length > 0 ? DataRes?.slice(offset, offset + itemsPerPage) : 0;
   const pageCount = Math.ceil(DataRes?.length / itemsPerPage); // Tổng số trang
 
   const handlePageClick = ({ selected }) => {
     setCurrentPage(selected);
   };
+
   return (
     <div className="p-4 bg-pink-300 min-h-screen">
       <button
         onClick={() => navigate(-1)}
-        className="bg-white px-5 py-3 text-red-400 font-medium rounded-lg mb-5 flex justify-center items-center gap-2"
+        className="bg-white p-2 text-red-400 font-medium rounded-full mb-5 flex justify-center items-center gap-2"
       >
         <span>
           <IconRight />
         </span>
-        <span className="text-lg">Trở về</span>
       </button>
-      <div className="mb-6 flex items-center flex-col gap-3">
-        <h3 className="text-lg text-red-400 font-bold py-3 px-5 rounded-md bg-white shadow-md max-w-fit">
+      <div className="mb-6 flex items-center  gap-3 py-4 px-5 rounded-md bg-white shadow-lg max-w-fit">
+        <div className="bg-pink-500 h-[70px] w-2 rounded-full mr-2"></div>
+        <h3 className="text-lg text-red-400 font-bold">
           Những lời chúc ngày 8-3 gửi đến các cô và các bạn nữ học viên của học
           viện
         </h3>
-        {currentItems?.length < 0 ? (
-          <span class="loader"></span>
-        ) : (
-          <p className="text-slate-600 font-bold">
-            Tổng hiện có {DataRes?.length} lời chúc
-          </p>
-        )}
       </div>
-      {currentItems?.length < 0 ? (
-        <span class="loader"></span>
+      {!currentItems || currentItems?.length <= 0 ? (
+        <div className="flex justify-center items-center flex-col mt-16">
+          <div className="loader"></div>
+          <span className="text-white font-medium mt-3 inline-block">
+            Dữ liệu đang được cập nhật
+          </span>
+        </div>
       ) : (
         <>
           <div className="">
@@ -85,13 +84,13 @@ const Watch = () => {
               currentItems.length >= 0 &&
               currentItems.map((item, index) => (
                 <div
-                  className="bg-white rounded p-3 shadow-lg [&:not(:last-child)]:mb-4"
+                  className="bg-white rounded p-3 shadow-lg [&:not(:last-child)]:mb-[18px]"
                   key={index}
                 >
                   <span className="border-b-2 border-gray-200 pb-2 mb-3 inline-block text-red-400">
                     {dayjs(item[0]).format("L")}
                   </span>
-                  <p className="font-medium text-slate-900 break-words leading-[1.5] max-h-32 overflow-y-auto scrollbar scroll-m-4 pr-6">
+                  <p className="font-semibold text-slate-900 break-words leading-[1.75] max-h-32 overflow-y-auto scrollbar scroll-m-4 pr-6">
                     {item[1]}
                   </p>
                 </div>
@@ -125,4 +124,4 @@ const Watch = () => {
   );
 };
 
-export default Watch;
+export default WatchPage;

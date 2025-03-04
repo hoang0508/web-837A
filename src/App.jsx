@@ -4,7 +4,7 @@ import Typewriter from "typewriter-effect";
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import { Volume2, VolumeOff } from "lucide-react";
+import { Send, TvMinimal, Volume2, VolumeOff } from "lucide-react";
 
 function App() {
   const navigate = useNavigate();
@@ -44,50 +44,49 @@ function App() {
     <>
       <div className="text-2xl font-bold  bg-pink-200 min-h-screen p-10 wrapper">
         <div className="bg-white shadow-3xl p-3 max-w-[800px]  my-0 mx-auto rounded-2xl wrapper-content">
-          <h1 className="text-center text-red-400 p-4 uppercase wrapper-content--title">
-            Chi đoàn 7A - CHÚC MỪNG NGÀY QUỐC TẾ PHỤ NỮ 8-3
-          </h1>
+          <div className="text-center mb-4">
+            <h1 className="text-center text-red-400 uppercase wrapper-content--title mb-2">
+              Chi đoàn VB7A
+            </h1>
+            <p className="wrapper-content--heading text-pink-500 text-[32px]">
+              Chúc mừng ngày Quốc tế Phụ nữ 8-3
+            </p>
+          </div>
           <div className="mx-auto max-w-[500px] h-[300px] wrapper-content--image">
             <img
-              src={anh83}
+              srcSet={`${anh83} 1x`}
               alt="##"
               className="w-full h-full object-cover rounded-2xl"
             />
           </div>
-          <div className="border-b-2 border-gray-200">
-            <Typewriter
-              options={{
-                strings: [
-                  `${"Chúc các cô giáo và các bạn nữ học viên, nhân ngày 8-3 vui vẻ, hạnh phúc, luôn mạnh khỏe và thành công! ❤️❤️❤️🌸🌸🌸🌸"}`,
-                ],
-                delay: 75,
-                autoStart: true,
-                loop: true,
-              }}
-            />
-          </div>
-          <p className="text-pink-400 font-medium my-4 px-4 text-center">
+          <p className="border-b-2 border-gray-200 Typewriter pb-4">
+            Chúc các cô giáo và các bạn nữ học viên, nhân ngày 8-3 vui vẻ, hạnh
+            phúc, luôn mạnh khỏe và thành công! ❤️❤️❤️
+          </p>
+          <p className="text-pink-400 font-medium my-4 px-4 text-center Typewriter-send">
             Hãy gửi những lời chúc ❤️, lời yêu thương ❤️❤️ đến các cô và các bạn
             nữ học viên của học viện
           </p>
           <div className="my-3  wrapper-content--bottom">
-            <div className="flex items-center gap-5 justify-center wrapper-content--btn">
-              <div className=" flex justify-center items-center">
-                <button
-                  onClick={(e) => handleClickBtn(e)}
-                  className="wrapper-content--button flex justify-center items-center py-3 px-4 bg-red-400 rounded-lg shadow-lg text-base text-white"
-                >
-                  Gửi lời chúc
-                </button>
-              </div>
-              <div className="flex justify-center items-center">
-                <button
-                  onClick={(e) => handleClickBtnWatch(e)}
-                  className="wrapper-content--button flex justify-center items-center text-base py-3 px-4 bg-red-500 rounded-lg shadow-lg text-white"
-                >
-                  Xem lời chúc mừng
-                </button>
-              </div>
+            <div className="flex flex-col items-center gap-5 justify-center wrapper-content--btn max-w-[230px] mx-auto">
+              <button
+                onClick={(e) => handleClickBtn(e)}
+                className="wrapper-content--button w-full flex justify-center items-center gap-2 py-3 px-4 bg-red-400 rounded-lg shadow-lg text-base text-white"
+              >
+                <span>
+                  <Send />
+                </span>
+                <span>Gửi lời chúc</span>
+              </button>
+              <button
+                onClick={(e) => handleClickBtnWatch(e)}
+                className="wrapper-content--button w-full flex justify-center items-center gap-2 text-base py-3 px-4 bg-red-500 rounded-lg shadow-lg text-white"
+              >
+                <span>
+                  <TvMinimal />
+                </span>
+                <span>Xem lời chúc mừng</span>
+              </button>
             </div>
           </div>
         </div>

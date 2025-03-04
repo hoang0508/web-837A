@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Watch from "./Watch";
+import WatchPage from "./WatchPage";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/watch",
-    element: <Watch />,
+    element: <WatchPage />,
   },
 ]);
 
