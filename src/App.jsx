@@ -103,6 +103,7 @@ function App() {
           )}
         </button>
       </div>
+      <p className="text-center font-semibold py-2">© 2025 by VB7A</p>
     </>
   );
 }

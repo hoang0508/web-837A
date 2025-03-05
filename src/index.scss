@@ -105,7 +105,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .custom-pagination {
-  @apply flex justify-center gap-x-4 my-6;
+  @apply flex justify-center gap-x-[20px] gap-y-[30px] my-6 flex-wrap;
   .page-item {
     .page-link {
       @apply bg-white text-slate-900 py-2 px-4 rounded cursor-pointer;
