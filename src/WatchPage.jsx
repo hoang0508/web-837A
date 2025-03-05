@@ -88,7 +88,7 @@ const WatchPage = () => {
                   key={index}
                 >
                   <span className="border-b-2 border-gray-200 pb-2 mb-3 inline-block text-red-400">
-                    {dayjs(item[0]).format("L")}
+                    {dayjs(item[0]).format("MM/DD/YYYY")}
                   </span>
                   <p className="font-semibold text-slate-900 break-words leading-[1.75] max-h-32 overflow-y-auto scrollbar scroll-m-4 pr-6">
                     {item[1]}
