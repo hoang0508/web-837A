@@ -1,0 +1,8 @@
+.member-list {
+  @media screen and (max-width: 767.98px) {
+    @apply grid-cols-2;
+    &--image {
+      height: 250px;
+    }
+  }
+}

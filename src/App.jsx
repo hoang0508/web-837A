@@ -1,8 +1,7 @@
 import anh83 from "./assets/anh832.png";
 import nhacMP3 from "./assets/nhac.mp3";
-import Typewriter from "typewriter-effect";
 import "./index.scss";
-import { useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { Send, TvMinimal, Volume2, VolumeOff } from "lucide-react";
 
@@ -60,8 +59,9 @@ function App() {
             />
           </div>
           <p className="border-b-2 border-gray-200 Typewriter pb-4">
-            Chúc các cô giáo và các bạn nữ học viên, nhân ngày 8-3 vui vẻ, hạnh
-            phúc, luôn mạnh khỏe và thành công! ❤️❤️❤️
+            Nhân ngày 8-3, kính chúc các cô giáo và các bạn nữ học viên luôn
+            rạng rỡ, hạnh phúc, dồi dào sức khỏe và gặt hái nhiều thành công
+            trong cuộc sống! ❤️❤️❤️
           </p>
           <p className="text-pink-400 font-medium my-4 px-4 text-center Typewriter-send">
             Hãy gửi những lời chúc ❤️, lời yêu thương ❤️❤️ đến các cô và các bạn
@@ -89,6 +89,11 @@ function App() {
               </button>
             </div>
           </div>
+          <Link to={"/member"}>
+            <span className="text-sm font-semibold underline block text-center text-red-400 cursor-pointer italic leading-[1.5]">
+              Xem danh sách thí sinh tham gia cuộc thi duyên dáng HVQT
+            </span>
+          </Link>
         </div>
         <button className="fixed bottom-5 left-[30px]" onClick={togglePlay}>
           {isPlaying ? (

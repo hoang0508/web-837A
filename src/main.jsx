@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WatchPage from "./WatchPage";
+import { MemberPage } from "./Member";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/watch",
     element: <WatchPage />,
+  },
+  {
+    path: "/member",
+    element: <MemberPage />,
   },
 ]);
 
