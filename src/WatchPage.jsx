@@ -64,10 +64,10 @@ const WatchPage = () => {
         </span>
       </button>
       <div className="mb-6 flex items-center  gap-3 py-4 px-5 rounded-md bg-white shadow-lg max-w-fit">
-        <div className="bg-pink-500 h-[70px] w-2 rounded-full mr-2"></div>
+        <div className="bg-pink-500 h-[70px] w-3 rounded-full mr-2"></div>
         <h3 className="text-lg text-red-400 font-bold">
-          Những lời chúc ngày 8-3 gửi đến các cô và các bạn nữ học viên của học
-          viện
+          Danh sách lời chúc nhân ngày 8-3 gửi đến các cô giáo và các bạn nữ học
+          viên của học viện
         </h3>
       </div>
       {!currentItems || currentItems?.length <= 0 ? (

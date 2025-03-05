@@ -59,7 +59,7 @@ const MemberPage = () => {
           </div>
         ) : (
           <div className="my-4">
-            <div className="flex gap-x-2 mb-4 items-center">
+            <div className="flex gap-x-3 mb-4 items-center">
               <span className="block w-2 h-[50px] bg-pink-400 rounded-full"></span>
               <h3 className="text-2xl font-semibold">
                 Danh sách thí sinh tham gia cuộc thi duyên dáng HVQT
