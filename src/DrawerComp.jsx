@@ -1,10 +1,12 @@
 import { Drawer } from "antd";
 import React from "react";
+import "./drawer.scss";
 
 const DrawerComp = ({ open, setOpen, data, loading }) => {
   return (
     <>
       <Drawer
+        className="custom-drawer"
         closable
         destroyOnClose
         title={<p>Chi tiết thí sinh</p>}
@@ -24,7 +26,7 @@ const DrawerComp = ({ open, setOpen, data, loading }) => {
               className="w-full h-full object-cover rounded-md"
             />
           </div>
-          <div className="flex flex-col gap-y-2 mt-3">
+          <div className="flex flex-col gap-y-3 mt-3">
             <h3 className="text-base text-pink-400 font-medium">
               {" "}
               <span className="font-semibold text-black">Tên thí sinh:</span>
