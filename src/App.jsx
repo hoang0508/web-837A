@@ -94,11 +94,11 @@ function App() {
               Xem danh sách thí sinh tham gia cuộc thi duyên dáng HVQT
             </span>
           </Link> */}
-          {/* <Link to={"/member"}>
+          <Link to={"/result"}>
             <span className="text-sm font-semibold underline block text-center text-red-400 cursor-pointer italic leading-[1.5]">
               Xem kết quả thí sinh tham gia cuộc thi duyên dáng HVQT
             </span>
-          </Link> */}
+          </Link>
         </div>
         <button className="fixed bottom-5 left-[30px]" onClick={togglePlay}>
           {isPlaying ? (

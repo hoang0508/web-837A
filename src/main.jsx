@@ -5,6 +5,7 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WatchPage from "./WatchPage";
 import { MemberPage } from "./Member";
+import { ResultPage } from "./result";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/member",
     element: <MemberPage />,
+  },
+  {
+    path: "/result",
+    element: <ResultPage />,
   },
 ]);
 
