@@ -89,11 +89,16 @@ function App() {
               </button>
             </div>
           </div>
-          <Link to={"/member"}>
+          {/* <Link to={"/member"}>
             <span className="text-sm font-semibold underline block text-center text-red-400 cursor-pointer italic leading-[1.5]">
               Xem danh sách thí sinh tham gia cuộc thi duyên dáng HVQT
             </span>
-          </Link>
+          </Link> */}
+          {/* <Link to={"/member"}>
+            <span className="text-sm font-semibold underline block text-center text-red-400 cursor-pointer italic leading-[1.5]">
+              Xem kết quả thí sinh tham gia cuộc thi duyên dáng HVQT
+            </span>
+          </Link> */}
         </div>
         <button className="fixed bottom-5 left-[30px]" onClick={togglePlay}>
           {isPlaying ? (
