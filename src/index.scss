@@ -141,3 +141,10 @@ body::-webkit-scrollbar-thumb {
     }
   }
 }
+
+.modal-custom {
+  font-family: "Montserrat", sans-serif;
+  .ant-modal-title {
+    @apply text-lg;
+  }
+}
