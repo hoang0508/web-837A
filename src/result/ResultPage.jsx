@@ -3,6 +3,9 @@ import IconRight from "../Icons/IconRight";
 import { useNavigate } from "react-router-dom";
 import { http1 } from "../http";
 import { useQuery } from "@tanstack/react-query";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
+import { Eye } from "lucide-react";
 
 const ResultPage = ({}) => {
   const navigate = useNavigate();
@@ -23,7 +26,6 @@ const ResultPage = ({}) => {
     queryFn: () => fetchDataMember(),
   });
   const DataResult = data?.data?.data || 0;
-  console.log("🚀 ~ ResultPage ~ DataResult:", DataResult);
   return (
     <div>
       <div className="p-4 bg-pink-100  min-h-screen">
@@ -56,11 +58,24 @@ const ResultPage = ({}) => {
                   Giải nhất
                 </h3>
                 <div className="h-96 relative w-64 mx-auto member-list--image rounded-md overflow-hidden">
-                  <img
-                    srcSet={`${DataResult[0]?.image} 1x`}
-                    alt=""
-                    className="w-full h-full object-cover rounded-md"
-                  />
+                  <PhotoProvider>
+                    <PhotoView src={DataResult[0]?.image}>
+                      <div className="relative w-full h-full cursor-pointer">
+                        {/* Hình ảnh */}
+                        <img
+                          src={DataResult[0]?.image}
+                          alt="Preview"
+                          className="w-full h-full object-cover rounded-md"
+                        />
+
+                        {/* Biểu tượng Eye (click để mở ảnh) */}
+                        <span className="absolute top-0 left-0 bg-black bg-opacity-50 flex justify-center items-center w-10 h-10 rounded-br-md overflow-hidden">
+                          <Eye color="white" />
+                        </span>
+                      </div>
+                    </PhotoView>
+                  </PhotoProvider>
+
                   <div className="absolute bottom-0 bg-black text-white bg-opacity-30 flex justify-center py-3 cursor-pointer -translate-x-2/4  left-2/4 w-full font-semibold">
                     {DataResult[0]?.vote} phiếu bình chọn
                   </div>
@@ -74,11 +89,23 @@ const ResultPage = ({}) => {
               <div className="flex gap-3 flex-col">
                 <h3 className="text-lg font-semibold text-red-500">Giải nhì</h3>
                 <div className="h-96 relative w-64 mx-auto member-list--image rounded-md overflow-hidden">
-                  <img
-                    srcSet={`${DataResult[1]?.image} 1x`}
-                    alt=""
-                    className="w-full h-full object-cover rounded-md"
-                  />
+                  <PhotoProvider>
+                    <PhotoView src={DataResult[1]?.image}>
+                      <div className="relative w-full h-full cursor-pointer">
+                        {/* Hình ảnh */}
+                        <img
+                          src={DataResult[1]?.image}
+                          alt="Preview"
+                          className="w-full h-full object-cover rounded-md"
+                        />
+
+                        {/* Biểu tượng Eye (click để mở ảnh) */}
+                        <span className="absolute top-0 left-0 bg-black bg-opacity-50 flex justify-center items-center w-10 h-10 rounded-br-md overflow-hidden">
+                          <Eye color="white" />
+                        </span>
+                      </div>
+                    </PhotoView>
+                  </PhotoProvider>
                   <div className="absolute bottom-0 bg-black text-white bg-opacity-30 flex justify-center py-3 cursor-pointer -translate-x-2/4  left-2/4 w-full font-semibold">
                     {DataResult[1]?.vote} phiếu bình chọn
                   </div>
@@ -89,41 +116,34 @@ const ResultPage = ({}) => {
                   <span>{DataResult[1]?.class}</span>
                 </div>
               </div>
-            </div>
-            <h3 className="text-lg font-semibold text-red-500 my-3">Giải ba</h3>
-            <div className="grid grid-cols-2 gap-x-3">
               <div className="flex gap-3 flex-col">
-                <div className="h-96 relative  member-list--image rounded-md overflow-hidden">
-                  <img
-                    srcSet={`${DataResult[2]?.image} 1x`}
-                    alt=""
-                    className="w-full h-full object-cover rounded-md"
-                  />
+                <h3 className="text-lg font-semibold text-red-500">Giải ba</h3>
+                <div className="h-96 relative w-64 mx-auto member-list--image rounded-md overflow-hidden">
+                  <PhotoProvider>
+                    <PhotoView src={DataResult[2]?.image}>
+                      <div className="relative w-full h-full cursor-pointer">
+                        {/* Hình ảnh */}
+                        <img
+                          src={DataResult[2]?.image}
+                          alt="Preview"
+                          className="w-full h-full object-cover rounded-md"
+                        />
+
+                        {/* Biểu tượng Eye (click để mở ảnh) */}
+                        <span className="absolute top-0 left-0 bg-black bg-opacity-50 flex justify-center items-center w-10 h-10 rounded-br-md overflow-hidden">
+                          <Eye color="white" />
+                        </span>
+                      </div>
+                    </PhotoView>
+                  </PhotoProvider>
                   <div className="absolute bottom-0 bg-black text-white bg-opacity-30 flex justify-center py-3 cursor-pointer -translate-x-2/4  left-2/4 w-full font-semibold">
                     {DataResult[2]?.vote} phiếu bình chọn
                   </div>
                 </div>
-                <div className="text-center mt-2 font-semibold text-pink-400 text-base">
+                <div className="text-center mt-2 font-semibold text-pink-400 text-lg">
                   <span>{DataResult[2]?.name}</span>
                   {" - "}
                   <span>{DataResult[2]?.class}</span>
-                </div>
-              </div>
-              <div className="flex gap-3 flex-col">
-                <div className="h-96 relative  member-list--image rounded-md overflow-hidden">
-                  <img
-                    srcSet={`${DataResult[3]?.image} 1x`}
-                    alt=""
-                    className="w-full h-full object-cover rounded-md"
-                  />
-                  <div className="absolute bottom-0 bg-black text-white bg-opacity-30 flex justify-center py-3 cursor-pointer -translate-x-2/4  left-2/4 w-full font-semibold">
-                    {DataResult[3]?.vote} phiếu bình chọn
-                  </div>
-                </div>
-                <div className="text-center mt-2 font-semibold text-pink-400 text-base">
-                  <span>{DataResult[3]?.name}</span>
-                  {" - "}
-                  <span>{DataResult[3]?.class}</span>
                 </div>
               </div>
             </div>
