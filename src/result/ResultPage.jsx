@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { Eye } from "lucide-react";
-import FireworksEffect from "../firework";
+import FireworksEffect from "../Firework";
 import ModalApp from "../ModalApp";
 
 const ResultPage = ({}) => {
