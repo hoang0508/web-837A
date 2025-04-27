@@ -29,12 +29,13 @@ const ExhibitionPage = () => {
   });
 
   const combinedData =
-    dataFromContent?.data?.data &&
-    dataFromContent?.data?.data?.length > 0 &&
-    dataFromContent?.data?.data.map((item, index) => ({
-      ...item,
-      audio: songs[index],
-    }));
+    (dataFromContent?.data?.data &&
+      dataFromContent?.data?.data?.length > 0 &&
+      dataFromContent?.data?.data.map((item, index) => ({
+        ...item,
+        audio: songs[index],
+      }))) ||
+    [];
 
   const offset = currentPage * itemsPerPage;
   const currentItems =
