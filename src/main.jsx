@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WatchPage from "./WatchPage";
 import { MemberPage } from "./Member";
 import { ResultPage } from "./result";
+import { ExhibitionPage } from "./exhibition";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/result",
     element: <ResultPage />,
+  },
+  {
+    path: "/exhibition",
+    element: <ExhibitionPage />,
   },
 ]);
 
