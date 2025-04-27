@@ -49,7 +49,7 @@ body::-webkit-scrollbar-thumb {
 
 .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 100rem;
-  @apply bg-pink-400;
+  @apply bg-red-400;
 }
 
 .Typewriter {
@@ -108,16 +108,19 @@ body::-webkit-scrollbar-thumb {
   @apply flex justify-center gap-x-[20px] gap-y-[30px] my-6 flex-wrap;
   .page-item {
     .page-link {
-      @apply bg-white text-slate-900 py-2 px-4 rounded cursor-pointer;
+      @apply bg-gray-200 text-slate-900 py-2 px-4 rounded cursor-pointer;
+    }
+    .page-link-next {
+      @apply bg-red-500 text-white py-2 px-4 rounded cursor-pointer;
     }
   }
   .page-item.disabled {
     .page-link {
-      @apply bg-gray-100 cursor-not-allowed;
+      @apply bg-gray-200 cursor-not-allowed;
     }
   }
   .page-item.active {
-    .page-link {
+    .page-link-next {
       @apply bg-red-400 text-white;
     }
   }
@@ -137,7 +140,7 @@ body::-webkit-scrollbar-thumb {
   }
   .page-item.active {
     .page-link {
-      @apply bg-red-400 text-white;
+      @apply bg-red-500 text-white;
     }
   }
 }
