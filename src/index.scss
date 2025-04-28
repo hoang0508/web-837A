@@ -108,7 +108,7 @@ body::-webkit-scrollbar-thumb {
   @apply flex justify-center gap-x-[20px] gap-y-[30px] my-6 flex-wrap;
   .page-item {
     .page-link {
-      @apply bg-gray-200 text-slate-900 py-2 px-4 rounded cursor-pointer;
+      @apply bg-red-500 text-white py-2 px-4 rounded cursor-pointer;
     }
     .page-link-next {
       @apply bg-red-500 text-white py-2 px-4 rounded cursor-pointer;
@@ -116,6 +116,9 @@ body::-webkit-scrollbar-thumb {
   }
   .page-item.disabled {
     .page-link {
+      @apply bg-gray-200 cursor-not-allowed;
+    }
+    .page-link-next {
       @apply bg-gray-200 cursor-not-allowed;
     }
   }
