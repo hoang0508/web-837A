@@ -56,7 +56,7 @@ const ExhibitionPage = () => {
       {!currentItems || currentItems?.length <= 0 ? (
         <div className="flex justify-center items-center flex-col mt-16">
           <div className="loader"></div>
-          <span className="text-white font-medium mt-3 inline-block">
+          <span className="text-red-400 font-medium mt-3 inline-block">
             Dữ liệu đang được cập nhật
           </span>
         </div>
